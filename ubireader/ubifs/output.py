@@ -143,10 +143,11 @@ def extract_dents(ubifs, inodes, dent_node, path='', perms=False):
 
 
 def _set_file_perms(path, inode):
-    os.chmod(path, inode['ino'].mode)
-    os.chown(path, inode['ino'].uid, inode['ino'].gid)
+    #os.chmod(path, inode['ino'].mode)
+    #os.chown(path, inode['ino'].uid, inode['ino'].gid)
+    with open("perms.txt", 'a') as f:
+        f.write('perms:%o,owner:%s.%s,path:%s\n' % (inode['ino'].mode, inode['ino'].uid, inode['ino'].gid, path))
     verbose_log(_set_file_perms, 'perms:%s, owner: %s.%s, path: %s' % (inode['ino'].mode, inode['ino'].uid, inode['ino'].gid, path))
-
     
 def _write_reg_file(path, data):
     with open(path, 'wb') as f:
