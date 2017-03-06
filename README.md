@@ -1,5 +1,6 @@
 # UBI Reader
 
+Only for windows, If you want using in linux : https://github.com/jrspruitt/ubi_reader
 
 UBI Reader is a Python module and collection of scripts capable of extracting
 the contents of UBI and UBIFS images, along with analyzing these images to
@@ -11,21 +12,22 @@ Python is required.
 
 python-lzo is the only non-standard module, it may or may not be available for your distro.
 
-    $ sudo apt-get install liblzo2-dev
+    Download from 
+    http://www.lfd.uci.edu/~gohlke/pythonlibs/#python-lzo
 
-    If it is available.
-    $ sudo apt-get install python-lzo
+    Choose which one match you system.
 
-    Else you will need to install from sources.
-    $ git clone https://github.com/jd-boyd/python-lzo.git
-    $ cd python-lzo
-    $ python setup.py install
+    Using pip to install:
+    For example
+    $ pip install python_snappy‑0.5‑cp27‑cp27m‑win_amd64.whl
+
 
 ## Installation:
 
-    $ git clone https://github.com/jrspruitt/ubi_reader
+    Download from https://github.com/ringsd/ubi_reader
     $ cd ubi_reader
-    $ sudo python setup.py install
+    copy patch\hooksymlik.py to the C:\Python27\Lib\site-packages
+    $ python setup.py install
 
 
 ## Usage:
